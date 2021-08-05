@@ -1,12 +1,14 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import { useRouter } from "next/router";
-import Link from "next/link";
 import { server } from "../../../config";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import Meta from '../../../components/Meta'
 
 const article = ({ article }) => {
   // const router = useRouter()
   // const {id} = router.query and it shows you which article number it is also would need This is an article {id} in the div
   return <>
+  <Meta title={article.title} description={article.id} />
   <h1>{article.title}</h1>
   <p>{article.body}</p>
   <br />
