@@ -1,5 +1,5 @@
 /* eslint-disable react/jsx-key */
-import Head from "next/head";
+// import Head from "next/head"; <----Able to get rid of now that there is a Meta component
 import ArticleList from "../components/ArticleList";
 import { server } from '../config' 
 
@@ -7,10 +7,10 @@ export default function Home({ articles }) {
   // console.log(articles)
   return (
     <div>
-      <Head>
+      {/* <Head>
         <title>Carrye On</title>
         <meta name="keywords" content="blog, technical writing" />
-      </Head>
+      </Head> <----This can also go because of Meta component*/}
       <ArticleList articles={articles}/>
     </div>
   );

@@ -3,9 +3,7 @@ import Link from 'next/link'
 const about = () => {
   return (
     <div>
-      <Head>
-        <title>About</title>
-      </Head>
+      {/* <-----This can go because of Meta component */}
       <h1>Welcome to me</h1>
     </div>
   );
