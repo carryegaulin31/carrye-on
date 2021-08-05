@@ -1,6 +1,7 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import { useRouter } from "next/router";
 import Link from "next/link";
+import { server } from "../../../config";
 
 const article = ({ article }) => {
   // const router = useRouter()
@@ -15,7 +16,7 @@ const article = ({ article }) => {
 
 export const getStaticProps = async (context) => {
       const res = await fetch(
-        `https://jsonplaceholder.typicode.com/posts/${context.params.id}`
+        `${server}/api/articles/${context.params.id}`
       );
     
       const article = await res.json();
@@ -25,11 +26,12 @@ export const getStaticProps = async (context) => {
           article,
         },
       };
-    };
+    }; 
+
     
     export const getStaticPaths = async () => {
         const res = await fetch(
-            `https://jsonplaceholder.typicode.com/posts`
+            `${server}/api/articles`
           );
         
           const articles = await res.json();
@@ -48,6 +50,7 @@ export const getStaticProps = async (context) => {
 
 
 
+// NOW WE TRY WITH MINI API THAT IS WHY THIS IS COMMENTED OUT BEFORE THIS WAS A PUBLIC API
 
 
 
