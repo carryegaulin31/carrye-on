@@ -1,14 +1,17 @@
+/* eslint-disable react/jsx-key */
 import Head from "next/head";
 
 export default function Home({ articles }) {
-console.log(articles)
+  // console.log(articles)
   return (
     <div>
       <Head>
         <title>Carrye On</title>
         <meta name="keywords" content="blog, technical writing" />
       </Head>
-      <h1>Welcome to my Blog</h1>
+      {articles.map((article) => (
+        <h3>{article.title}</h3>
+      ))}
     </div>
   );
 }
